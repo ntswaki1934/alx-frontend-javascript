@@ -1,13 +1,13 @@
-import Building from './5-building.js';
+import Building from './5-building';
 
-const b = new Building(100);
-console.log(b);
 
-class TestBuilding extends Building {}
-
-try {
-    new TestBuilding(200)
+class TestBuilding extends Building {
+  evacuationWarningMessage() {
+    return 'This is a test evacuation warning message.';
+  }
 }
-catch(err) {
-    console.log(err);
-}
+
+
+const building = new TestBuilding(120);
+console.log(building.sqft);
+console.log(building.evacuationWarningMessage());
